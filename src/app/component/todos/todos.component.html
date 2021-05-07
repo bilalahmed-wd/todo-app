@@ -1,0 +1,29 @@
+<form (submit)="insertToDo()">
+    <div class="form-row">
+        <div class="col-6">
+            <input name="todoName" id="" [(ngModel)]="inputToDo" class="form-control">
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Add A Todo</button>
+</form>
+
+<div class="col-md-6">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sr#</th>
+                <th>TODOs</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let todo of todos; let i=index;">
+            <tr>
+                <td>{{i}}</td>
+                <td>{{todo.content}}</td>
+                <td><button class="delete" (click)="deleteATodo(i)">Remove</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
